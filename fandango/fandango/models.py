@@ -15,13 +15,13 @@ class Theater(models.Model):
 
 class Movie(models.Model):
     title = models.CharField(max_length=100)
-    # theaters = models.ManyToManyField(Theater)
+    theaters = models.ManyToManyField(Theater)
     poster = models.URLField()
     rating = models.CharField(max_length=10, null=True)
 
 #so i can see the movie names in admin
     def __str__(self):
-        return self.title + ' (' + str(self.movie_id) + ')'
+        return self.title + ' (' + str(self.id) + ')'
 
 class Showtime(models.Model):
     movie = models.ForeignKey(Movie, on_delete=models.CASCADE)

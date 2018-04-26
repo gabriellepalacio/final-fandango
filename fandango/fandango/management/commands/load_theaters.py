@@ -52,7 +52,7 @@ class Command(BaseCommand):
                 theater_instance.long = th_geo["longitude"]
                 theater_instance.save()
 
-                th_movies = row.get('movie')
+                th_movies = row.get('movies')
                 if(th_movies):
                     th_movie_list = []
                     #where the nested data starts
@@ -67,7 +67,7 @@ class Command(BaseCommand):
                             # movie_genre = movie['genres'][0],
                         )
                         movie_instance.theaters.add(theater_instance)
-                        theater_instance.movie_set.add(movie_instance)
+
 
                         #this is how we get date and time
                         variants = movie.get('variants')
@@ -83,7 +83,7 @@ class Command(BaseCommand):
                                                     movie = movie_instance,
                                                     theater = theater_instance,
                                                     time = showtime['date'],
-                                                    tickets = showtime['ticketingUrl'],
+                                                    # tickets = showtime['ticketingUrl'],
                                                 )
 
             except Exception as e:
