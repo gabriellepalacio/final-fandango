@@ -1,23 +1,48 @@
 <!-- fandango/fandagno/templates/base.html -->
-{% load static %}
-<html lang="en">
-<head>
-  <meta charset="utf-8">
+{% extends "base.html" %}
+{% load humanize %}
 
-  <title>Lol wut</title>
-  <meta name="description" content="Learning Django">
-<!-- {% block css %}
-  {{ block.super }}
-  <link rel="stylesheet" href="{% static "fandango/css/styles.css" %}">
-  {% endblock %} -->
+{% block content %}
 
-</head>
 
-<body>
-  <script src="js/scripts.js"></script>
-  <h1> TRYING</h1>
-  <p>Theaters: {{theater_count}}</p>
-  <h2>my very best</h2>
-  <p>halp</p>
-</body>
-</html>
+
+    <li class="breadcrumb-item active">Home</li>
+
+
+
+    <div class="row">
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Movies
+                    </h5>
+                    <p class="card-text">
+                        <a href="{% url "movies-list" %}">{{ movies.count }} Movies</a>
+                        <p>Theaters: {{theater_count}}</p>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-6">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        Theaters
+                    </h5>
+                    <p class="card-text">
+                        <a href="#">{{ theaters.count }} Theaters</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <hr>
+    <div class="row">
+        <div class="col-12">
+            <pre id="raw-json"></pre>
+        </div>
+    </div>
+
+    {% endblock %}

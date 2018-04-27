@@ -8,11 +8,9 @@ app_name = 'fandango'
 
 urlpatterns = [
     path('', views.home, name='home'),
-    # path('movies/', views.list_movies, name='movies-list'),
-    # path('theaters/', views.list_theaters, name='theaters-list'),
-    # path('movies/<int:movie_id>/', views.movie_detail, name="movie-details"),
-    # path('theaters/<slug:th_id>/', views.theater_detail, name="theater-details"),
+    path('movies/', views.list_movies, name='movies-list'),
     path('admin/', admin.site.urls),
+    path('movies/<int:movie_id>/', views.list_movies, name="movie-details"),
 ]
 
 # from django.urls import path

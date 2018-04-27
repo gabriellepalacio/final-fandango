@@ -34,3 +34,6 @@ RUN /opt/project/env/bin/django-admin startproject fandango
 
 # Switch to the unc user
 USER unc
+
+# Adding all local code files
+COPY . .

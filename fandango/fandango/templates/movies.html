@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load static %}
+{% block movies %}
+
+
+<h2>Movies: {{ movie.name }}</h2>
+<p>Details</p>
+<div class="chart"></div>
+<ul>
+    <li>{{ movie.title }}</li>
+    <li>{{ movie }}</li>
+    <li>{{ objects.count }} {{ list_type }}<li>
+
+
+</ul>
+
+{% endblock %}
+
+{% block script %}
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script src="{% static "fandango/js/scripts.js" %}"></script>
+{% endblock %}
