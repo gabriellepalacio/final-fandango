@@ -8,6 +8,8 @@
     <title>Movies</title>
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
+    <!-- MAPS -->
+    <link rel="stylesheet" href="/maps/documentation/javascript/demos/demos.css">
 
     <link rel="stylesheet" type="text/css" href="{% static 'fandango/css/styles.css' %}">
 
@@ -32,6 +34,13 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-12">
+                      {% block theaters %}
+                      {% endblock %}
+                    </div>
+                </div>
+
 
                 <nav aria-label="breadcrumb">
                     <ol class="breadcrumb">
@@ -45,6 +54,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
     <script src="{% static "fandango/js/scripts.js" %}"></script>
+    <script src="{% static "fandango/js/creds.js" %}"></script>
+    <script src="{% static "fandango/js/map.js" %}"></script>
 {% endblock %}
   </body>
 </html>

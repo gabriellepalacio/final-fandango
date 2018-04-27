@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load humanize %}
+{% load static %}
+
+{% block theaters %}
+
+<h3>My Google Maps Demo</h3>
+<div id="map"></div>
+
+
+<script src="js/creds.js"></script>
+<script>
+function loadScript() {
+  var script = document.createElement('script');
+  script.type = 'text/javascript';
+  script.src = 'https://maps.googleapis.com/maps/api/js?v=3' +
+      '&key=' + myMapsKey +'&callback=initMap';
+  document.body.appendChild(script);
+}
+window.onload = loadScript;
+</script>
+
+{% endblock %}

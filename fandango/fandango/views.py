@@ -25,7 +25,7 @@ def movie_detail(request):
 def movies(request, pk):
     Movies = get_object_or_404(Movies, id=pk)
     context = {
-        
+
         'movies' : movies,
     }
     return render(request, "movies.html", context)
@@ -58,6 +58,22 @@ def list_movies(request):
         #"filter_breadcrumb_url": filter_breadcrumb_url,
     })
 
+
+def list_theaters(request):
+    # filter_by = request.GET.get('filter')
+    # filter_val = request.GET.get('val')
+    # filter_breadcrumb_name = None
+    # filter_breadcrumb_url = None
+
+    objects = Theater.objects.all()
+
+
+
+    return render(request, "theater.html", {
+        "list_type": "Theaters",
+        "objects": objects,
+
+    })
 # from django.http import HttpResponse
 # from django.core import serializers
 # from django.shortcuts import render, get_object_or_404

@@ -11,6 +11,7 @@ urlpatterns = [
     path('movies/', views.list_movies, name='movies-list'),
     path('admin/', admin.site.urls),
     path('movies/<int:movie_id>/', views.list_movies, name="movie-details"),
+    path('theaters/', views.list_theaters, name='theaters-list'),
 ]
 
 # from django.urls import path
