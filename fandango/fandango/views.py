@@ -1,6 +1,12 @@
 from django.shortcuts import render
 from fandango.models import Theater, Movie, Showtime
-from django.shortcuts import render, get_object_or_404, redirect, render_to_response
+from django.shortcuts import render, get_object_or_404
+from django.http import HttpResponse
+from django.core import serializers
+
+from django.urls import reverse
+from django.http import JsonResponse
+from . import models
 
 
 
@@ -14,21 +20,46 @@ def home(request):
     return render(request, "home.html", context)
 
 def movie_detail(request):
+    movie = get_object_or_404(models.Movie, movie_id=movie_id)
+    theater_objects = movie.theaters.all()
+    theaters = []
+    for t, theater in enumerate(theater_objects):
+         theaters.append(theater.name)
+
     context = {
-        'title': movie.title(),
-        'theaters': Theater.objects.all(),
-        'movies': Movie.objects.all()
+        'title' : movie.title,
+        'poster' : "https://" + movie.poster,
+        'theaters' : theaters,
 
-    }
-    return render(request, "home.html", context)
+      }
+    return render(request, "detail.html", context)
 
-def movies(request, pk):
-    Movies = get_object_or_404(Movies, id=pk)
-    context = {
+def movies(request):
+    filter_by = request.GET.get('filter')
+    filter_val = request.GET.get('val')
+    filter_breadcrumb_name = None
+    filter_breadcrumb_url = None
 
-        'movies' : movies,
-    }
-    return render(request, "movies.html", context)
+    objects = Movie.objects.all()
+
+    if filter_by and filter_val:
+        if filter_by == 'city':
+            objects = objects.filter(movie__city__iexact=filter_val)
+            filter_breadcrumb_name = "City"
+            #filter_breadcrumb_url = reverse("winners:countries-list")
+        if filter_by == 'genre':
+            objects = objects.filter(movie__genre__iexact=filter_val)
+            filter_breadcrumb_name = "Genres"
+            #filter_breadcrumb_url = reverse("winners:categories-list")
+
+    return render(request, "movies.html", {
+        "list_type": "Movie",
+        "objects": objects,
+        "filter_by": filter_by,
+        "filter_val": filter_val,
+        "filter_breadcrumb_name": filter_breadcrumb_name,
+        #"filter_breadcrumb_url": filter_breadcrumb_url,
+    })
 
 
 def list_movies(request):
@@ -49,7 +80,7 @@ def list_movies(request):
             filter_breadcrumb_name = "Genres"
             #filter_breadcrumb_url = reverse("winners:categories-list")
 
-    return render(request, "movies.html", {
+    return render(request, "list.html", {
         "list_type": "Movie",
         "objects": objects,
         "filter_by": filter_by,
@@ -142,7 +173,7 @@ def list_theaters(request):
 #         'title' : movie.title,
 #         'poster' : "https://" + movie.poster,
 #         'theaters' : theaters,
-#         'rating' : movie.rating,
+#
 #       }
 #       return render(request, "fandango/movie_detail.html", context)
 #

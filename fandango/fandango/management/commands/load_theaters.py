@@ -115,4 +115,4 @@ class Command(BaseCommand):
             #             for time3 in amenityGroups:
             #                 showtimes = row['showtimes']
             #                 for time4 in showtimes:
-            #                     time_date = row['ticketingDate']
+            #                     time_date = row['ticketingDate']                 time_date = row['ticketingDate']
