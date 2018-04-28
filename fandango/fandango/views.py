@@ -19,7 +19,7 @@ def home(request):
     }
     return render(request, "home.html", context)
 
-def movie_detail(request):
+def movie_detail(request, movie_id):
     movie = get_object_or_404(models.Movie, movie_id=movie_id)
     theater_objects = movie.theaters.all()
     theaters = []

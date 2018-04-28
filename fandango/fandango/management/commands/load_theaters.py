@@ -60,11 +60,11 @@ class Command(BaseCommand):
                     for m, movie in enumerate(th_movies):
 
                         movie_instance, _ = Movie.objects.get_or_create(
-                            # movie_id = movie['id'],
+                            movie_id = movie['id'],
                             title = movie['title'],
                             poster = movie['poster']['size']['full'][2:],
-                            rating = movie['rating'],
-                            # movie_genre = movie['genres'][0],
+                            # rating = movie['rating'],
+
                         )
                         movie_instance.theaters.add(theater_instance)
 

@@ -10,8 +10,9 @@ urlpatterns = [
     path('', views.home, name='home'),
     path('movies/', views.movies, name='movies'),
     path('admin/', admin.site.urls),
-    path('movies/<int:movie_id>/', views.list_movies, name="movie-details"),
+    path('movies/<int:id>/', views.movie_detail, name="movie-details"),
     path('theaters/', views.list_theaters, name='theaters-list'),
+    path('details/<int:movie_id>/', views.movie_detail, name="movie-details"),
 
 ]
 

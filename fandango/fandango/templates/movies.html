@@ -28,7 +28,7 @@
                   {% for o in objects %}
                     <tr>
                         <td>
-                              <a href="{{ o.get_absolute_url }}">
+                              <a href="/details/{{ o.movie_id }}"><h4>{{ o.title }}</h4></a>
                                   {{ o }}
                               </a>
                         </td>
@@ -45,5 +45,5 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://d3js.org/d3.v5.min.js"></script>
-    
+
 {% endblock %}
