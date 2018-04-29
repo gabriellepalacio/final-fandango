@@ -17,7 +17,7 @@ class Movie(models.Model):
     title = models.CharField(max_length=100)
     theaters = models.ManyToManyField(Theater)
     poster = models.URLField()
-    # rating = models.CharField(max_length=10, null=True)
+    rating = models.CharField(max_length=10, null=True)
     movie_id = models.IntegerField(unique=True)
 
 #so i can see the movie names in admin

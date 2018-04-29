@@ -14,15 +14,16 @@
     <link rel="stylesheet" type="text/css" href="{% static 'fandango/css/styles.css' %}">
 
   </head>
-  <body>
+  <body class="back">
     <div class="page-header">
-      <h1>testy</h1>
+      <h1 class="top"><span> <img src="{% static 'fandango/images/concert-ticket.svg' %}" class="logo"></span><a href="{% url "home" %}" class="gab">GABDANGO</a> <a href="{% url "movies" %}" class="mv"> MOVIES</a> <a href="{% url "theaters-list" %}" class="th"> THEATERS</a></H1>
+
     </div>
         <div class="container">
 
                 <div class="row">
                     <div class="col-12">
-                        <h1 class="display-4">Movies!</h1>
+
                           {% block content %}
                           {% endblock %}
                     </div>
@@ -41,11 +42,19 @@
                     </div>
                 </div>
 
-            
+
 
                 <div class="row">
                     <div class="col-12">
                       {% block detail %}
+                      {% endblock %}
+                    </div>
+                </div>
+
+
+                <div class="row">
+                    <div class="col-12">
+                      {% block theater_detail %}
                       {% endblock %}
                     </div>
                 </div>
@@ -68,43 +77,3 @@
 {% endblock %}
   </body>
 </html>
-
-
-<!-- {% load humanize %}
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-
-  <title>Lol wut</title>
-
-
-  <link href="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
-  <meta name="description" content="Learning Django">
-
-{% load static %}
-    <link rel="stylesheet" type="text/css" href="{% static 'fandango/css/styles.css' %}">
-
-
-</head>
-
-<body>
-  <body>
-  <script src="js/scripts.js"></script>
-  <div class="container">
-
-</div>
-
-  <div class="container">
-  <script src="js/scripts.js"></script>
-  <h1> TRYING</h1>
-  <p>Theaters: {{theater_count}}</p>
-
-  <p>Movies: {{movie_count}}</p>
-  <p>Showtimes: {{showtime_count}}</p>
-  <h2>my very best</h2>
-  <p>halp</p>
-  </div>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-</body>
-</html> -->

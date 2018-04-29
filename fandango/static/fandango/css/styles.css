@@ -1,7 +1,112 @@
 h1{
-  font-family:cursive;
+  font-family: Source Sans Pro;
+  color: #2F3740;
+
+}
+/* gabdango style */
+h1.top{
+  color:white;
+  font-size: 24pt;
+  font-family: Source Sans Pro, Bold;
+}
+/* feature title in home.html */
+h1.feature{
+  margin:auto;
+  text-align:center;
+  margin-bottom:15px;
+
+}
+/* styling for movie tiles on movie list page */
+.mvt{
+  margin:auto;
+
+  display:inline;
+  background-color:white;
+  padding-top:5px;
+
+}
+/* movies.html padding */
+.row1{
+  padding:5px;
+  margin:auto;
+}
+/* detail.html styling */
+.row2{
+  background-color:white;
+  margin:auto;
+
+}
+/* poster tiles */
+.mvt-poster{
+  margin:auto;
+  text-align:center;
+  display:inline;
+
 }
 
+/* details for the movie details.html */
+.deet{
+margin:10px;
+}
+
+/* for the movies.html tiles */
+.col-md-5{
+  width:180px;
+}
+/* for the tile wordsx */
+
+.tile{
+color:#434343;
+  font-size:12pt;
+  font-weight: bold;
+}
+
+/* top logo */
+a.gab{
+  color:white !important;
+  font-size: 24pt;
+}
+/* featured boxes */
+h3{
+
+}
+/* background color for whole site */
+.back{
+  background-color:#efefef;
+}
+/* movie menu item */
+.mv{
+  color:#8EA4BF;
+  align-items:right;
+  margin-left:800px;
+  font-size:16pt;
+
+}
+
+.thin{
+font-weight: lighter;
+font-style: italic;
+}
+/* theater menu item */
+
+.th{
+  color:#8EA4BF;
+  align-items:right;
+  margin-left:20px;
+  font-size:16pt;
+
+}
+/* orange text for location */
+.durham{
+  color:#FC5C05;
+}
+img.logo{
+  width:70px;
+  margin:5px;
+  margin-bottom:0px;
+}
+
+/* d3 chart */
 .chart div {
   font: 10px sans-serif;
   background-color: steelblue;
@@ -11,6 +116,36 @@ h1{
   color: white;
 }
 
+/* links */
+a{
+color: #2F3740;
+
+}
+
+a:hover{
+color:#8EA4BF;
+text-decoration: none;
+
+}
+
+a.mv:hover{
+color:white;
+text-decoration: none;
+
+}
+
+a.th:hover{
+color:white;
+text-decoration: none;
+
+}
+/* top menu */
+.page-header{
+  background-color: #2F3740;
+  padding: 5px 5px 0px 3px;
+  border-bottom: 5px solid #ABC5E5;
+  margin-bottom: 10px;
+}
 
 /* MAP */
 #map {

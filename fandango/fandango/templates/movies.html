@@ -6,38 +6,48 @@
 {% endblock %}
 
 {% block movies %}
-    <div class="row">
+
+
+
+
+<h1 class="feature">What to Watch in <span class="durham">Durham, NC</span></h1>
+
+
+    <div class="row row1">
         <div class="col-12">
-            <div class="card">
-                <div class="card-body">
-                    <p>{{ objects.count }} {{ list_type }}
-                    </p>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-12">
-            <table class="table">
-                <thead>
-                  <tr>
-                    <th scope="col">Name</th>
-                  </tr>
-                </thead>
-                <tbody>
+</div>
                   {% for o in objects %}
-                    <tr>
-                        <td>
-                              <a href="/details/{{ o.movie_id }}"><h4>{{ o.title }}</h4></a>
-                                  {{ o }}
-                              </a>
-                        </td>
-                    </tr>
+
+
+
+                                <div class="row row1">
+                                  <div class="col-md-8 mvt-poster">
+                                  <a href="/details/{{ o.movie_id }}">
+                                    <img src="https://{{ o.poster }}" style="width: 150px; max-height:220px;">
+                                  </a>
+                                </div>
+                                  <div class="col-md-5 mvt">
+                                    <a href="/details/{{ o.movie_id }}"><h4 class="tile">{{ o.title }}: <span class="thin"> {{ s.time }}7:45 P.M.</span></h4></a>
+
+
+
+
+
+
+
+
+
+
+
+
+                                  </div>
+                                </div>
+
+
                   {% endfor %}
-                </tbody>
-              </table>
+
         </div>
-    </div>
+
 
 
 {% endblock %}

@@ -6,43 +6,56 @@
 
 
 
-    <li class="breadcrumb-item active">Home</li>
 
+
+
+<h1 class="feature feat">FEATURED <span class="durham">MOVIES</span></h1>
 
 
     <div class="row">
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">
-                        Movies
-                    </h5>
-                    <p class="card-text">
-                        <a href="{% url "movies" %}">{{ movies.count }} Movies</a>
-                        <p>Theaters: {{theater_count}}</p>
-                    </p>
-                </div>
+
+                    <h3 class="card-text">
+                        <!-- <a href="{% url "movies" %}"> Movies</a> -->
+
+                    <a href="#">  A Quiet Place</a>
+                    </h3>
+
+
+
+
+<iframe width="500" height="260" src="https://www.youtube.com/embed/WR7cc5t7tv8" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <P>A family is forced to live in silence while hiding from creatures that hunt by sound.</P>
             </div>
         </div>
+      </div>
+
         <div class="col-6">
             <div class="card">
                 <div class="card-body">
-                    <h5 class="card-title">
-                        Theaters
-                    </h5>
-                    <p class="card-text">
-                      <a href="{% url "theaters-list" %}">{{ theaters.count }} Theaters</a>
-                    </p>
+
+                    <h3 class="card-text">
+                      <a href="#">Ready Player One</a>
+                      </h3>
+
+
+
+  <iframe width="500" height="260" src="https://www.youtube.com/embed/cSp1dM2Vj48" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+  <P>In the year 2045, the only time Wade Watts truly feels alive is when he escapes to the OASIS, an immersive virtual universe where most of humanity spends their days. </P>
+
+</h3>
                 </div>
             </div>
         </div>
 
     </div>
     <hr>
-    <div class="row">
+    <!-- <div class="row">
         <div class="col-12">
             <pre id="raw-json"></pre>
         </div>
-    </div>
+    </div> -->
 
     {% endblock %}

@@ -2,11 +2,43 @@
 {% extends "base.html" %}
 {% block detail %}
 
-<h2>{{ movie.title }}</h2>
-<p>Movie Details</p>
-<ul>
-    <li>Rating {{ rating }}</li>
-    <li>Theaters {{ theaters }}</li>
-</ul>
-<img alt="movie poster" src={{ poster }}>
+
+<div class="row row2 " style="max-width:1000px; padding:none;">
+  <div class="col-md-6">
+
+<img  src={{ poster }} style="width:500px;">
+</div>
+<div class="col-md-5 deet">
+<h2>{{ title }}</h2>
+
+
+<p>Rating: <strong> {{ rating }}</strong></p>
+
+
+
+
+<h1>{{ time }}</h1>
+
+<p><i>You can watch {{ title }} at any of the following locations:</i></p>
+<table class="table">
+    <thead>
+
+    </thead>
+    <tbody>
+      {% for o in objects %}
+        <tr>
+            <td>
+              <a href="/details/{{ o.theater_id }}" class="theater-name">
+                {{ o }}
+              </a>
+
+            </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+
+</div>
+</div>
+
 {% endblock %}

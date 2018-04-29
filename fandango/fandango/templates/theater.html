@@ -2,10 +2,38 @@
 {% load humanize %}
 {% load static %}
 
-{% block theaters %}
 
-<h3>My Google Maps Demo</h3>
+
+{% block theaters %}
+<div class="row">
+<h3>Theaters in Durham</h3>
 <div id="map"></div>
+<div class="row">
+    <div class="col-12" style="margin:auto; text-align:center;">
+        <table class="table" style="margin:auto; text-align:center;">
+            <thead>
+              <tr>
+                <th scope="col">Name</th>
+              </tr>
+            </thead>
+            <tbody>
+              {% for o in objects %}
+                <tr>
+                    <td>
+                      <a href="/details/{{ o.theater_id }}" class="theater-name">
+                        {{ o }}
+                      </a>
+
+                    </td>
+                </tr>
+              {% endfor %}
+            </tbody>
+          </table>
+    </div>
+</div>
+
+
+
 
 
 
