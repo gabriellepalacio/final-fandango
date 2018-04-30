@@ -12,12 +12,12 @@
 <h2>{{ title }}</h2>
 
 
-<p>Rating: <strong> {{ rating }}</strong></p>
+<p>Rating: <strong> {{ rating }} </strong></p>
 
 
 
 
-<h1>{{ time }}</h1>
+<p>Showtimes: <strong>{% for s in showtimes|slice:":10" %} {{ s.time }} {% endfor %}</strong></p>
 
 <p><i>You can watch {{ title }} at any of the following locations:</i></p>
 <table class="table">

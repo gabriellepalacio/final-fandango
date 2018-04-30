@@ -20,6 +20,7 @@ function initMap() {
         var varsity = {lat:35.913200, lng:-79.055847};
 
 
+        
         var label = "";
         var popUp = new google.maps.InfoWindow({
           content: label
@@ -133,7 +134,7 @@ function initMap() {
           content: label10
         });
         var marker10 = new google.maps.Marker({
-          position: varisty,
+          position: varsity,
           map: map
         });
       }

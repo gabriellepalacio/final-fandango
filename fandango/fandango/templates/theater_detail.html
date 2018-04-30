@@ -7,37 +7,37 @@
 
 {% block content %}
 <div class="row">
-  <div id="detail-header" class="col-md-12">
-    <h2>{{ name }}</h2>
-  </div>
-  <div class="col-md-12">
-    <p>Theater Details</p>
-    <ul>
-      <li>Address {{ address }}</li>
 
-    </ul>
-  </div>
-  <div class="row">
+
+
     <div class="col-md-12">
-      <h5>Now showing at {{name}}:</h5>
+       <h1 class="feature feat">Now Showing at <span class="durham">{{ name }}</span></h1>
+
+
+         <h1 class="feature feat" style="font-size:18pt;">Theater Address: <span class="add"> Address {{ address }}</span></h1>
+
+
+
     </div>
-  </div>
+
   <div class="row">
     {% for o in movies %}
-    <div class="col-md-4">
-      <div class="row movie-tile">
-        <div class="col-md-5">
+
+      <div class="row row1">
+        <div class="col-md-8 mvt-poster">
         <a href="/details/{{ o.movie_id }}">
-          <img alt="movie poster" src="https://{{ o.poster }}" style="width: 100px;">
+          <img src="{{ o.poster }}" style="width: 150px; max-height:220px;">
         </a>
       </div>
-        <div class="col-md-7 tile-info">
-          <a href="/details/{{ o.movie_id }}"><h4>{{ o.title }}</h4></a>
-          
+        <div class="col-md-5 mvt">
+          <a href="/details/{{ o.movie_id }}"><h4 class="tile">{{ o.title }} <span class="thin"> </span></h4></a>
+
         </div>
       </div>
-    </div>
+
+
     {% endfor %}
+
   </div>
 </div>
 

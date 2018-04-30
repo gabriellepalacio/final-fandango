@@ -63,7 +63,7 @@ class Command(BaseCommand):
                             movie_id = movie['id'],
                             title = movie['title'],
                             poster = movie['poster']['size']['full'][2:],
-                            # rating = movie['rating'],
+                            rating = movie['rating'],
 
                         )
                         movie_instance.theaters.add(theater_instance)

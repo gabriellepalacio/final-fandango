@@ -53,6 +53,12 @@ margin:10px;
 .col-md-5{
   width:180px;
 }
+
+.now{
+  text-align:center !important;
+  margin:auto !important;
+  font-size:22pt !important;
+}
 /* for the tile wordsx */
 
 .tile{
@@ -100,6 +106,10 @@ font-style: italic;
 .durham{
   color:#FC5C05;
 }
+
+.add{
+  color: #8EA4BF;
+}
 img.logo{
   width:70px;
   margin:5px;
@@ -108,8 +118,8 @@ img.logo{
 
 /* d3 chart */
 .chart div {
-  font: 10px sans-serif;
-  background-color: steelblue;
+  font: 14pt;
+  background-color: #FC5C05;
   text-align: right;
   padding: 3px;
   margin: 1px;
@@ -153,3 +163,13 @@ text-decoration: none;
        height: 400px;
        background-color: grey;
      }
+
+.table{
+  margin:auto;
+  text-align:center !important;
+  font-size:18pt;
+}
+
+.please{
+  margin-left:10px;
+}

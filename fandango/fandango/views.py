@@ -11,34 +11,40 @@ from . import models
 
 
 def home(request):
+    objects = Movie.objects.all()
+    # context = {
+    #     'theater_count': Theater.objects.count(),
+    #     'theaters': Theater.objects.all(),
+    #     'movie_count': Movie.objects.count(),
+    #     'showtime_count': Showtime.objects.count(),
+    #
+    #
+    #
+    # }
+    # return render(request, "home.html", context)
 
-    context = {
-        'theater_count': Theater.objects.count(),
-        'theaters': Theater.objects.all(),
-        'movie_count': Movie.objects.count(),
-        'showtime_count': Showtime.objects.count(),
+    return render(request, "home.html", {
+        "list_type": "Movie",
+        "objects": objects,
 
 
-
-    }
-    return render(request, "home.html", context)
+        })
 
 def movie_detail(request, movie_id):
     movie = get_object_or_404(models.Movie, movie_id=movie_id)
     theater_objects = movie.theaters.all()
     theaters = []
     for t, theater in enumerate(theater_objects):
-         theaters.append(theater.name)
+          theaters.append(theater.name)
     showtime_objects = Showtime.objects.all()
     showtimes = []
-    for s, showtime in enumerate(showtimes):
-        showtimes.append(showtime)
+
     objects = Theater.objects.all()
     context = {
         'title' : movie.title,
-        'poster' : "https://" + movie.poster,
+        'poster' : movie.poster,
         'theaters' : theaters,
-        'showtimes' : showtimes,
+        "showtimes" : showtime_objects,
         'rating' : movie.rating,
         "list_type": "Theaters",
         "objects": objects,
@@ -49,30 +55,16 @@ def movie_detail(request, movie_id):
 
 
 def movies(request):
-    # filter_by = request.GET.get('filter')
-    # filter_val = request.GET.get('val')
-    # filter_breadcrumb_name = None
-    # filter_breadcrumb_url = None
     showtime_objects = Showtime.objects.all()
     objects = Movie.objects.all()
     showtimes = []
-    for s, showtime in enumerate(showtimes):
-        showtimes.append(showtime)
-
-    # if filter_by and filter_val:
-    #     if filter_by == 'city':
-    #         objects = objects.filter(movie__city__iexact=filter_val)
-    #         filter_breadcrumb_name = "City"
-    #         #filter_breadcrumb_url = reverse("winners:countries-list")
-    #     if filter_by == 'genre':
-    #         objects = objects.filter(movie__genre__iexact=filter_val)
-    #         filter_breadcrumb_name = "Genres"
-    #         #filter_breadcrumb_url = reverse("winners:categories-list")
+    # for s, showtime_objects in enumerate(showtimes):
+    #     showtimes.append(showtime)
 
     return render(request, "movies.html", {
         "list_type": "Movie",
         "objects": objects,
-        "showtimes" : showtimes,
+        "showtimes" : showtime_objects,
 
         # "filter_by": filter_by,
         # "filter_val": filter_val,

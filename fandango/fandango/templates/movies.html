@@ -16,18 +16,18 @@
     <div class="row row1">
         <div class="col-12">
 </div>
+  <div class="row">
                   {% for o in objects %}
-
 
 
                                 <div class="row row1">
                                   <div class="col-md-8 mvt-poster">
                                   <a href="/details/{{ o.movie_id }}">
-                                    <img src="https://{{ o.poster }}" style="width: 150px; max-height:220px;">
+                                    <img src="{{ o.poster }}" style="width: 150px; max-height:220px;">
                                   </a>
                                 </div>
                                   <div class="col-md-5 mvt">
-                                    <a href="/details/{{ o.movie_id }}"><h4 class="tile">{{ o.title }}: <span class="thin"> {{ s.time }}7:45 P.M.</span></h4></a>
+                                    <a href="/details/{{ o.movie_id }}"><h4 class="tile">{{ o.title }}: <span class="thin">{% for s in showtimes|slice:":2" %} {{ s.time }} {% endfor %}</span></h4></a>
 
 
 
